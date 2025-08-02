@@ -1,35 +1,95 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "@/contexts/AuthContext";
+import PrivateRoute from "@/router/PrivateRoute";
+import AdminOnlyRoute from "@/router/AdminOnlyRoute";
+
+import Footer from "./components/Footer";
+import LegalNoticePage from "./pages/LegalNoticePage";
+import LoginPage from "@/pages/Auth/LoginPage";
+import RegisterPage from "@/pages/Auth/RegisterPage";
+import AccountPage from "@/pages/Auth/AccountPage";
+import AdminPage from "@/pages/AdminPage";
+import NotFoundPage from "@/pages/NotFoundPage";
+import ThemesPage from "@/pages/ThemesPage";
+import PhrasesPage from "@/pages/Phrase/PhrasesPage";
+import GroupsPage from "@/pages/Group/GroupsPage";
+import GroupPage from "@/pages/Group/GroupPage";
+import GroupSettingsPage from "@/pages/Group/GroupSettingsPage";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <AuthProvider>
+      <BrowserRouter>
+       <div className="flex flex-col min-h-screen">
+      <main className="flex-grow">
+        <Routes>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/legal" element={<LegalNoticePage />} />
+          <Route
+            path="/"
+            element={
+              <PrivateRoute>
+                <ThemesPage />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/account"
+            element={
+              <PrivateRoute>
+                <AccountPage />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/theme/:id"
+            element={
+              <PrivateRoute>
+                <PhrasesPage />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/groups"
+            element={
+              <PrivateRoute>
+                <GroupsPage />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/group/:id"
+            element={
+              <PrivateRoute>
+                <GroupPage />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/admin"
+            element={
+              <AdminOnlyRoute>
+                <AdminPage />
+              </AdminOnlyRoute>
+            }
+          />
+          <Route
+            path="/groups/:id/settings"
+            element={
+              <PrivateRoute>
+                <GroupSettingsPage />
+              </PrivateRoute>
+            }
+          />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+        </main>
+        <Footer/>
+        </div>
+      </BrowserRouter>
+    </AuthProvider>
+  );
 }
 
-export default App
+export default App;

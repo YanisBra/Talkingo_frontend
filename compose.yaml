@@ -1,0 +1,8 @@
+  services:
+    
+    frontend:
+      build: .
+      container_name: mybank_frontend_container
+      ports:
+        - "5173:5173"
+      command: ["npm", "run", "dev", "--", "--host"]
