@@ -66,15 +66,6 @@ const Navbar = () => {
         <button
           onClick={() => {
             setMenuOpen(false);
-            navigate("/themes");
-          }}
-          className="px-4 py-2 bg-pink-400 hover:bg-pink-500 text-white font-medium rounded-lg shadow-md transition cursor-pointer lg:bg-white/40 lg:hover:bg-white/60 lg:text-black lg:backdrop-blur-md"
-        >
-          Themes
-        </button>
-        <button
-          onClick={() => {
-            setMenuOpen(false);
             navigate("/account");
           }}
           className="px-4 py-2 bg-pink-400 hover:bg-pink-500 text-white font-medium rounded-lg shadow-md transition cursor-pointer lg:bg-white/40 lg:hover:bg-white/60 lg:text-black lg:backdrop-blur-md"
