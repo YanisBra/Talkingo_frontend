@@ -12,10 +12,11 @@ export default function LoginPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     try {
-      await login(email, password); 
-      navigate("/"); 
+      await login(email, password);
+      navigate("/");
     } catch (error) {
       const message = error?.response?.data?.message || "Login failed";
       if (message.includes("Too many failed login attempts")) {
@@ -25,6 +26,8 @@ export default function LoginPage() {
       } else {
         toast.error("Login failed. Please try again.");
       }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -56,26 +59,6 @@ export default function LoginPage() {
             className="w-full py-3 bg-pink-400  hover:bg-pink-500 text-white font-semibold rounded-xl shadow-md shadow-pink-400/50 transition flex items-center justify-center cursor-pointer"
             disabled={loading}
           >
-            {loading && (
-              <svg
-                className="mr-3 h-5 w-5 animate-spin text-white"
-                viewBox="0 0 24 24"
-              >
-                <circle
-                  className="opacity-25"
-                  cx="12"
-                  cy="12"
-                  r="10"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                />
-                <path
-                  className="opacity-75"
-                  fill="currentColor"
-                  d="M4 12a8 8 0 018-8v4l3.536-3.536A9.953 9.953 0 0122 12h-4a8 8 0 01-8 8v-4l-3.536 3.536A9.953 9.953 0 012 12h4z"
-                />
-              </svg>
-            )}
             {loading ? "Logging in..." : "Login"}
           </button>
         </form>
