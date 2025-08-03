@@ -5,7 +5,7 @@ export const getThemes = async () => {
     const response = await api.get("/themes");
     return response.data;
   } catch (error) {
-    console.error("Failed to fetch themes:", error);
+    // console.error("Failed to fetch themes:", error);
     throw error;
   }
 };
@@ -15,7 +15,7 @@ export const getUserThemesProgress = async () => {
     const response = await api.get(`/users/me/themes/progress`);
     return response.data;
   } catch (error) {
-    console.error("Failed to fetch themes progress:", error);
+    // console.error("Failed to fetch themes progress:", error);
     throw error;
   }
 };
@@ -33,7 +33,7 @@ export const createTheme = async (code) => {
     );
     return response.data;
   } catch (error) {
-    console.error("Failed to create theme:", error);
+    // console.error("Failed to create theme:", error);
     throw error;
   }
 };
@@ -42,7 +42,7 @@ export const deleteTheme = async (id) => {
   try {
     await api.delete(`/themes/${id}`);
   } catch (error) {
-    console.error(`Failed to delete theme with ID ${id}:`, error);
+    // console.error(`Failed to delete theme with ID ${id}:`, error);
     throw error;
   }
 };
@@ -60,7 +60,7 @@ export const updateTheme = async (id, code) => {
     );
     return response.data;
   } catch (error) {
-    console.error(`Failed to update theme with ID ${id}:`, error);
+    // console.error(`Failed to update theme with ID ${id}:`, error);
     throw error;
   }
 };

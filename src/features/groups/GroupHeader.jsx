@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import GroupCodeDisplay from "@/components/GroupCodeDisplay";
+import GroupCodeDisplay from "@/features/groups/GroupCodeDisplay";
 import WhiteButton from "@/components/WhiteButton";
 
 export default function GroupHeader({ groupName, groupCode, totalProgress, groupId }) {
@@ -25,7 +25,7 @@ export default function GroupHeader({ groupName, groupCode, totalProgress, group
         ></div>
       </div>
 
-      {/* Desktop button: visible on md and up */}
+      {/* Desktop button */}
       <div className="hidden md:block absolute top-0 right-0">
         <WhiteButton
           onClick={() => navigate(`/groups/${groupId}/settings`)}
@@ -35,7 +35,7 @@ export default function GroupHeader({ groupName, groupCode, totalProgress, group
         />
       </div>
 
-      {/* Mobile button: visible only on small screens */}
+      {/* Mobile button */}
       <div className="md:hidden mt-4">
         <button
           onClick={() => navigate(`/groups/${groupId}/settings`)}

@@ -1,4 +1,4 @@
-// import Navbar from "@/components/Navbar";
+// import Navbar from "@/layouts/Navbar";
 // import { useEffect, useState } from "react";
 // import { useParams, useNavigate } from "react-router-dom";
 // import { getPhrasesByTheme } from "@/services/phrasesService";
@@ -164,7 +164,7 @@
 //   );
 // }
 
-import Navbar from "@/components/Navbar";
+import Navbar from "@/layouts/Navbar";
 import { useParams } from "react-router-dom";
 import PhrasesLogic from "@/features/phrase/logic/PhrasesLogic";
 import PhraseCard from "@/features/phrase/PhraseCard";

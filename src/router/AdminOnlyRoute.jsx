@@ -7,7 +7,7 @@ export default function AdminOnlyRoute({ children }) {
   if (loading) return null;
 
   // Not logged in -> redirect to login
-  if (!user) return <Navigate to="/login" />;
+  if (!user) return <Navigate to="/landing" />;
 
   // Logged in but not an admin -> redirect to home
   if (!user.roles?.includes('ROLE_ADMIN')) {

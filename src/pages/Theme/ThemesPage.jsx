@@ -1,16 +1,15 @@
 import { useState } from "react";
 import UserThemesProgressLogic from "@/features/theme/logic/UserThemesProgressLogic";
 import { useNavigate } from "react-router-dom";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/layouts/Navbar";
 import SearchBar from "@/components/SearchBar";
 import { useAuth } from "@/contexts/AuthContext";
-
 import ThemeProgressCard from "@/components/ThemeProgressCard";
 
 export default function ThemesPage() {
   const { progressData, loading } = UserThemesProgressLogic();
   const [searchTerm, setSearchTerm] = useState("");
-  const { user } = useAuth(); 
+  const { user } = useAuth();
   const navigate = useNavigate();
 
   if (loading)

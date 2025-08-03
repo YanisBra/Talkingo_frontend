@@ -1,0 +1,31 @@
+.
+├── public
+└── src
+    ├── __tests__
+    │   ├── admin
+    │   ├── pages
+    │   └── router
+    ├── assets
+    ├── components
+    ├── contexts
+    ├── features
+    │   ├── admin
+    │   ├── auth
+    │   │   └── logic
+    │   ├── groups
+    │   │   └── logic
+    │   ├── phrase
+    │   │   └── logic
+    │   └── theme
+    │       └── logic
+    ├── hooks
+    ├── layouts
+    ├── pages
+    │   ├── Auth
+    │   ├── Group
+    │   ├── Phrase
+    │   └── Theme
+    ├── router
+    └── services
+
+29 directories

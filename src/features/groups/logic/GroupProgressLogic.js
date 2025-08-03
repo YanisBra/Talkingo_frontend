@@ -29,7 +29,7 @@ export default function GroupProgressLogic(groupId) {
         setTotalProgress(progress.totalAverageProgress || 0);
         setProgressData(progress.themes || []);
       } catch (error) {
-        console.error("Error loading group data:", error);
+        // console.error("Error loading group data:", error);
       } finally {
         setLoading(false);
       }
@@ -53,7 +53,7 @@ export default function GroupProgressLogic(groupId) {
           [themeId]: members,
         }));
       } catch (error) {
-        console.error("Error loading members:", error);
+        // console.error("Error loading members:", error);
       }
     }
   };

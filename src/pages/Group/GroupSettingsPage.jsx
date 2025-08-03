@@ -1,9 +1,9 @@
 import { useParams, useNavigate } from "react-router-dom";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/layouts/Navbar";
 import { useAuth } from "@/contexts/AuthContext";
 import GroupSettingsLogic from "@/features/groups/logic/GroupSettingsLogic";
 import GroupMembersTable from "@/features/groups/GroupMembersTable";
-import GroupCodeDisplay from "@/components/GroupCodeDisplay";
+import GroupCodeDisplay from "@/features/groups/GroupCodeDisplay";
 import WhiteButton from "@/components/WhiteButton";
 import BlackButton from "@/components/BlackButton";
 import PinkButton from "@/components/PinkButton";

@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/layouts/Navbar";
 import ThemeProgressCard from "@/components/ThemeProgressCard";
 import GroupMembersProgress from "@/features/groups/GroupMembersProgress";
 import GroupHeader from "@/features/groups/GroupHeader";

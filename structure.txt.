@@ -1,0 +1,122 @@
+.
+├── compose.yaml
+├── Dockerfile
+├── eslint.config.js
+├── index.html
+├── Jenkinsfile
+├── package-lock.json
+├── package.json
+├── public
+│   └── vite.svg
+├── README.md
+├── setupTests.js
+├── src
+│   ├── __tests__
+│   │   ├── admin
+│   │   │   ├── GroupMembersPanel.test.jsx
+│   │   │   ├── GroupPanel.test.jsx
+│   │   │   ├── LanguagePanel.test.jsx
+│   │   │   ├── PhrasePanel.test.jsx
+│   │   │   ├── PhraseTranslationPanel.test.jsx
+│   │   │   ├── ThemePanel.test.jsx
+│   │   │   ├── ThemeTranslationPanel.test.jsx
+│   │   │   └── UserPanel.test.jsx
+│   │   ├── pages
+│   │   │   ├── GroupPage.test.jsx
+│   │   │   ├── GroupSettingsPage.test.jsx
+│   │   │   ├── LoginPage.test.jsx
+│   │   │   ├── PhrasesPage.test.jsx
+│   │   │   ├── RegisterPage.test.jsx
+│   │   │   └── ThemesPage.test.jsx
+│   │   └── router
+│   │       ├── AdminOnlyRoute.test.jsx
+│   │       └── PrivateRoute.test.jsx
+│   ├── App.css
+│   ├── App.jsx
+│   ├── assets
+│   ├── components
+│   │   ├── AdminModal.jsx
+│   │   ├── AdminTable.jsx
+│   │   ├── BlackButton.jsx
+│   │   ├── GroupCodeDisplay.jsx
+│   │   ├── PinkButton.jsx
+│   │   ├── SearchBar.jsx
+│   │   ├── ThemeProgressCard.jsx
+│   │   └── WhiteButton.jsx
+│   ├── contexts
+│   │   └── AuthContext.jsx
+│   ├── features
+│   │   ├── admin
+│   │   │   ├── GroupMembersPanel.jsx
+│   │   │   ├── GroupPanel.jsx
+│   │   │   ├── LanguagePanel.jsx
+│   │   │   ├── PhrasePanel.jsx
+│   │   │   ├── PhraseTranslationPanel.jsx
+│   │   │   ├── PhraseTranslationsByThemePanel.jsx
+│   │   │   ├── ThemePanel.jsx
+│   │   │   ├── ThemeTranslationByThemePanel.jsx
+│   │   │   ├── ThemeTranslationPanel.jsx
+│   │   │   └── UserPanel.jsx
+│   │   ├── auth
+│   │   │   └── logic
+│   │   │       ├── AccountPageLogic.js
+│   │   │       └── RegisterFormLogic.js
+│   │   ├── groups
+│   │   │   ├── CreateGroupForm.jsx
+│   │   │   ├── GroupHeader.jsx
+│   │   │   ├── GroupMembersProgress.jsx
+│   │   │   ├── GroupMembersTable.jsx
+│   │   │   ├── JoinGroupForm.jsx
+│   │   │   └── logic
+│   │   │       ├── GroupProgressLogic.js
+│   │   │       ├── GroupSettingsLogic.js
+│   │   │       └── GroupsPageLogic.js
+│   │   ├── phrase
+│   │   │   ├── logic
+│   │   │   │   └── PhrasesLogic.js
+│   │   │   └── PhraseCard.jsx
+│   │   └── theme
+│   │       └── logic
+│   │           └── UserThemesProgressLogic.js
+│   ├── hooks
+│   │   └── useLanguage.js
+│   ├── index.css
+│   ├── layouts
+│   │   ├── Footer.jsx
+│   │   └── Navbar.jsx
+│   ├── main.jsx
+│   ├── pages
+│   │   ├── AdminPage.jsx
+│   │   ├── Auth
+│   │   │   ├── AccountPage.jsx
+│   │   │   ├── LoginPage.jsx
+│   │   │   └── RegisterPage.jsx
+│   │   ├── Group
+│   │   │   ├── GroupPage.jsx
+│   │   │   ├── GroupSettingsPage.jsx
+│   │   │   └── GroupsPage.jsx
+│   │   ├── LegalNoticePage.jsx
+│   │   ├── NotFoundPage.jsx
+│   │   ├── Phrase
+│   │   │   └── PhrasesPage.jsx
+│   │   ├── Theme
+│   │   └── ThemesPage.jsx
+│   ├── router
+│   │   ├── AdminOnlyRoute.jsx
+│   │   └── PrivateRoute.jsx
+│   └── services
+│       ├── api.js
+│       ├── authService.js
+│       ├── groupMembershipsService.js
+│       ├── groupsService.js
+│       ├── languagesService.js
+│       ├── phrasesService.js
+│       ├── phraseTranslationsService.js
+│       ├── themesService.js
+│       ├── themeTranslationsService.js
+│       └── usersService.js
+├── structure.txt.
+├── vite.config.js
+└── vitest.config.js
+
+29 directories, 91 files

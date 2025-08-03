@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+import Navbar from "@/layouts/Navbar";
 import useAccountPage from "@/features/auth/logic/AccountPageLogic";
 
 export default function AccountPage() {

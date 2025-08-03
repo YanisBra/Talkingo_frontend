@@ -11,7 +11,7 @@ export default function UserThemesProgressLogic() {
         const data = await getUserThemesProgress();
         setProgressData(data);
       } catch (error) {
-        console.error("Error loading theme progress:", error);
+        // console.error("Error loading theme progress:", error);
       } finally {
         setLoading(false);
       }

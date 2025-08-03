@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+import Navbar from "@/layouts/Navbar";
 import GroupsPageLogic from "@/features/groups/logic/GroupsPageLogic";
 import JoinGroupForm from "@/features/groups/JoinGroupForm";
 import CreateGroupForm from "@/features/groups/CreateGroupForm";

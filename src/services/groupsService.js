@@ -62,7 +62,7 @@ export const getGroupUserThemeProgress = async ({ groupId, themeId }) => {
     );
     return response.data;
   } catch (error) {
-    console.error("Failed to get group user theme progress:", error);
+    // console.error("Failed to get group user theme progress:", error);
     throw error;
   }
 };
@@ -76,7 +76,7 @@ export const createGroup = async (name) => {
     });
     return response.data;
   } catch (error) {
-    console.error("Failed to create group:", error);
+    // console.error("Failed to create group:", error);
     throw error;
   }
 };
@@ -85,7 +85,7 @@ export const deleteGroup = async (id) => {
   try {
     await api.delete(`/groups/${id}`);
   } catch (error) {
-    console.error(`Failed to delete group with ID ${id}:`, error);
+    // console.error(`Failed to delete group with ID ${id}:`, error);
     throw error;
   }
 };
@@ -99,7 +99,7 @@ export const updateGroup = async (id, data) => {
     });
     return response.data;
   } catch (error) {
-    console.error(`Failed to update group with ID ${id}:`, error);
+    // console.error(`Failed to update group with ID ${id}:`, error);
     throw error;
   }
 };
@@ -117,7 +117,7 @@ export const joinGroup = async (invitationCode) => {
     );
     return response.data;
   } catch (error) {
-    console.error("Failed to join group", error);
+    // console.error("Failed to join group", error);
     throw error;
   }
 };
@@ -131,7 +131,7 @@ export const leaveGroup = async (id) => {
     });
     return response.data;
   } catch (error) {
-    console.error("Failed to leave group", error);
+    // console.error("Failed to leave group", error);
     throw error;
   }
 };

@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+import Navbar from "@/layouts/Navbar";
 
 export default function LegalNoticePage() {
   return (
