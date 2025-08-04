@@ -5,6 +5,7 @@ import ThemeTranslationByThemePanel from "./ThemeTranslationByThemePanel";
 import AdminTable from "@/components/AdminTable";
 import AdminModal from "@/components/AdminModal";
 
+
 export default function ThemePanel() {
   const [themes, setThemes] = useState([]);
   const [loading, setLoading] = useState(true);

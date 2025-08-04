@@ -4,12 +4,14 @@ import { getUsers, deleteUser, updateUser } from "@/services/usersService";
 import { getLanguages } from "@/services/languagesService";
 import AdminTable from "@/components/AdminTable";
 import AdminModal from "@/components/AdminModal";
+import BlackButton from "@/components/BlackButton";
+import PinkButton from "@/components/PinkButton";
 
 export default function UserPanel() {
   const [users, setUsers] = useState([]);
   const [languages, setLanguages] = useState([]);
   const [editingUser, setEditingUser] = useState(null);
-  const [userToDelete, setUserToDelete] = useState(null);
+  const [toDelete, setToDelete] = useState(null);
   const [form, setForm] = useState({ name: "", email: "", plainPassword: "", interfaceLanguage: "", targetLanguage: "", roles: [], isAdmin: false });
   const [loading, setLoading] = useState(true);
 
@@ -87,9 +89,9 @@ const handleFormChange = (e) => {
 
   const handleDelete = async () => {
     try {
-      await deleteUser(userToDelete.id);
-      setUsers(users.filter((u) => u.id !== userToDelete.id));
-      setUserToDelete(null);
+      await deleteUser(toDelete.id);
+      setUsers(users.filter((u) => u.id !== toDelete.id));
+      setToDelete(null);
       toast.success("Delete Successful");
     } catch (err) {
       toast.error("Delete failed");
@@ -125,7 +127,7 @@ const handleFormChange = (e) => {
               </span>
               <span
                 onClick={() =>
-                  setUserToDelete(users.find((user) => user.id === u.id))
+                  setToDelete(users.find((user) => user.id === u.id))
                 }
                 className="text-red-600 cursor-pointer hover:underline"
               >
@@ -180,14 +182,28 @@ const handleFormChange = (e) => {
         />
       )}
 
-      {userToDelete && (
+      {toDelete && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="bg-white backdrop-blur-md p-8 rounded-3xl w-full max-w-md shadow-xl">
-            <h4 className="text-2xl font-black text-center mb-6 text-gray-800">Confirm Deletion</h4>
-            <p className="text-gray-700 mb-6 text-center">Are you sure you want to delete <strong>{userToDelete.name}</strong>?</p>
+            <h4 className="text-2xl font-black text-center mb-6 text-gray-800">
+              Confirm Deletion
+            </h4>
+            <p className="text-gray-700 mb-6 text-center">
+              Are you sure you want to delete <strong>{toDelete.name}</strong>?
+            </p>
             <div className="flex justify-end gap-2">
-              <button onClick={() => setUserToDelete(null)} className="px-4 py-2 bg-white/60 text-gray-800 font-semibold rounded-xl shadow">Cancel</button>
-              <button onClick={handleDelete} className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-xl shadow">Delete</button>
+              <BlackButton
+                onClick={() => setToDelete(null)}
+                paddingX={4}
+                paddingY={2}
+                label="Cancel"
+              />
+              <PinkButton
+                onClick={handleDelete}
+                paddingX={4}
+                paddingY={2}
+                label="Delete"
+              />
             </div>
           </div>
         </div>

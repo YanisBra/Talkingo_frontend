@@ -9,6 +9,8 @@ import { getThemes } from "@/services/themesService";
 import PhraseTranslationByPhrasePanel from "./PhraseTranslationsByThemePanel";
 import AdminTable from "@/components/AdminTable";
 import AdminModal from "@/components/AdminModal";
+import BlackButton from "@/components/BlackButton";
+import PinkButton from "@/components/PinkButton";
 
 export default function PhrasePanel() {
   const [phrases, setPhrases] = useState([]);
@@ -166,26 +168,29 @@ export default function PhrasePanel() {
         />
       )}
 
+   
       {toDelete && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="bg-white backdrop-blur-md p-8 rounded-3xl w-full max-w-md shadow-xl">
-            <h4 className="text-2xl font-black text-center mb-6 text-gray-800">Confirm Deletion</h4>
+            <h4 className="text-2xl font-black text-center mb-6 text-gray-800">
+              Confirm Deletion
+            </h4>
             <p className="text-gray-700 mb-6 text-center">
               Are you sure you want to delete <strong>{toDelete.code}</strong>?
             </p>
             <div className="flex justify-end gap-2">
-              <button
+              <BlackButton
                 onClick={() => setToDelete(null)}
-                className="px-4 py-2 bg-white/60 hover:bg-white/80 text-gray-800 font-semibold rounded-xl shadow"
-              >
-                Cancel
-              </button>
-              <button
+                paddingX={4}
+                paddingY={2}
+                label="Cancel"
+              />
+              <PinkButton
                 onClick={handleDelete}
-                className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-xl shadow"
-              >
-                Delete
-              </button>
+                paddingX={4}
+                paddingY={2}
+                label="Delete"
+              />
             </div>
           </div>
         </div>

@@ -4,6 +4,8 @@ import { getLanguages } from "@/services/languagesService";
 import GroupMembersPanel from "./GroupMembersPanel";
 import AdminTable from "@/components/AdminTable";
 import AdminModal from "@/components/AdminModal";
+import BlackButton from "@/components/BlackButton";
+import PinkButton from "@/components/PinkButton";
 
 export default function GroupPanel() {
   const [groups, setGroups] = useState([]);
@@ -151,25 +153,30 @@ export default function GroupPanel() {
       )}
 
       {toDelete && (
-        <AdminModal
-          title="Confirm Deletion"
-          onClose={() => setToDelete(null)}
-          onSubmit={handleDelete}
-          submitLabel="Delete"
-          form={{}}
-          fields={[
-            {
-              name: "confirm",
-              type: "custom",
-              render: () => (
-                <p className="text-center text-gray-700">
-                  Are you sure you want to delete{" "}
-                  <strong>{toDelete.name}</strong>?
-                </p>
-              ),
-            },
-          ]}
-        />
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          <div className="bg-white backdrop-blur-md p-8 rounded-3xl w-full max-w-md shadow-xl">
+            <h4 className="text-2xl font-black text-center mb-6 text-gray-800">
+              Confirm Deletion
+            </h4>
+            <p className="text-gray-700 mb-6 text-center">
+              Are you sure you want to delete <strong>{toDelete.name}</strong>?
+            </p>
+            <div className="flex justify-end gap-2">
+              <BlackButton
+                onClick={() => setToDelete(null)}
+                paddingX={4}
+                paddingY={2}
+                label="Cancel"
+              />
+              <PinkButton
+                onClick={handleDelete}
+                paddingX={4}
+                paddingY={2}
+                label="Delete"
+              />
+            </div>
+          </div>
+        </div>
       )}
     </>
   );

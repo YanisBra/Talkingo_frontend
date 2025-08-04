@@ -9,6 +9,8 @@ import { getLanguages } from "@/services/languagesService";
 import AdminTable from "@/components/AdminTable";
 import AdminModal from "@/components/AdminModal";
 import WhiteButton from "../../components/WhiteButton";
+import BlackButton from "@/components/BlackButton";
+import PinkButton from "@/components/PinkButton";
 
 export default function ThemeTranslationByThemePanel({ theme, onBack }) {
   const [translations, setTranslations] = useState([]);
@@ -169,18 +171,18 @@ export default function ThemeTranslationByThemePanel({ theme, onBack }) {
               Are you sure you want to delete <strong>{toDelete.label}</strong>?
             </p>
             <div className="flex justify-end gap-2">
-              <button
+              <BlackButton
                 onClick={() => setToDelete(null)}
-                className="px-4 py-2 bg-white/60 hover:bg-white/80 text-gray-800 font-semibold rounded-xl shadow"
-              >
-                Cancel
-              </button>
-              <button
+                paddingX={4}
+                paddingY={2}
+                label="Cancel"
+              />
+              <PinkButton
                 onClick={handleDelete}
-                className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-xl shadow"
-              >
-                Delete
-              </button>
+                paddingX={4}
+                paddingY={2}
+                label="Delete"
+              />
             </div>
           </div>
         </div>
