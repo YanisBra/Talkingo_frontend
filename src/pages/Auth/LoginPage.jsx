@@ -32,7 +32,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen py-12 px-4 flex items-center justify-center bg-gradient-to-br from-yellow-100 via-pink-200 to-purple-200">
+    <div className="min-h-screen py-12 px-4 flex items-center justify-center">
       <div className="bg-white/40 backdrop-blur-md p-8 rounded-3xl shadow-xl max-w-md w-full">
         <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">
           Welcome back !

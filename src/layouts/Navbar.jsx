@@ -24,7 +24,7 @@ const Navbar = () => {
       <div className="lg:hidden">
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="text-black focus:outline-none"
+          className="text-gray-800 focus:outline-none"
         >
           <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
             <path
@@ -51,7 +51,7 @@ const Navbar = () => {
                   setMenuOpen(false);
                   navigate("/admin");
                 }}
-                className="px-4 py-2 bg-pink-400 hover:bg-pink-500 text-white font-medium rounded-lg shadow-md transition cursor-pointer lg:bg-white/40 lg:hover:bg-white/60 lg:text-black lg:backdrop-blur-md"
+                className="px-4 py-2 bg-pink-400 hover:bg-pink-500 text-white font-medium rounded-lg shadow-md transition cursor-pointer lg:bg-white/40 lg:hover:bg-white/60 lg:text-gray-800 lg:backdrop-blur-md"
               >
                 Back Office
               </button>
@@ -61,7 +61,7 @@ const Navbar = () => {
                 setMenuOpen(false);
                 navigate("/groups");
               }}
-              className="px-4 py-2 bg-pink-400 hover:bg-pink-500 text-white font-medium rounded-lg shadow-md transition cursor-pointer lg:bg-white/40 lg:hover:bg-white/60 lg:text-black lg:backdrop-blur-md"
+              className="px-4 py-2 bg-pink-400 hover:bg-pink-500 text-white font-medium rounded-lg shadow-md transition cursor-pointer lg:bg-white/40 lg:hover:bg-white/60 lg:text-gray-800 lg:backdrop-blur-md"
             >
               Groups
             </button>
@@ -70,7 +70,7 @@ const Navbar = () => {
                 setMenuOpen(false);
                 navigate("/account");
               }}
-              className="px-4 py-2 bg-pink-400 hover:bg-pink-500 text-white font-medium rounded-lg shadow-md transition cursor-pointer lg:bg-white/40 lg:hover:bg-white/60 lg:text-black lg:backdrop-blur-md"
+              className="px-4 py-2 bg-pink-400 hover:bg-pink-500 text-white font-medium rounded-lg shadow-md transition cursor-pointer lg:bg-white/40 lg:hover:bg-white/60 lg:text-gray-800 lg:backdrop-blur-md"
             >
               My Account
             </button>
@@ -79,7 +79,7 @@ const Navbar = () => {
                 setMenuOpen(false);
                 handleLogout();
               }}
-              className="px-4 py-2 bg-pink-400 hover:bg-pink-500 text-white font-medium rounded-lg shadow-md transition cursor-pointer lg:bg-white/40 lg:hover:bg-white/60 lg:text-black lg:backdrop-blur-md"
+              className="px-4 py-2 bg-pink-400 hover:bg-pink-500 text-white font-medium rounded-lg shadow-md transition cursor-pointer lg:bg-white/40 lg:hover:bg-white/60 lg:text-gray-800 lg:backdrop-blur-md"
             >
               Logout
             </button>
@@ -90,7 +90,7 @@ const Navbar = () => {
               setMenuOpen(false);
               navigate("/login");
             }}
-            className="px-4 py-2 bg-pink-400 hover:bg-pink-500 text-white font-medium rounded-lg shadow-md transition cursor-pointer lg:bg-white/40 lg:hover:bg-white/60 lg:text-black lg:backdrop-blur-md"
+            className="px-4 py-2 bg-pink-400 hover:bg-pink-500 text-white font-medium rounded-lg shadow-md transition cursor-pointer lg:bg-white/40 lg:hover:bg-white/60 lg:text-gray-800 lg:backdrop-blur-md"
           >
             Login
           </button>
