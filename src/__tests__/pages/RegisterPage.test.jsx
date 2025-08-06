@@ -28,7 +28,7 @@ beforeEach(() => {
   toast.error.mockReset();
 });
 
-vi.mock("@/services/AuthService", () => ({
+vi.mock("@/services/authService", () => ({
   register: vi.fn(),
 }));
 
