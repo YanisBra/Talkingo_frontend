@@ -15,9 +15,9 @@ pipeline {
         
         stage("Continuous Delivery / Livraison Continue") {
             steps {
-                sh "docker build . -t ${DOCKERHUB_USERNAME}/talkingo_frontend"
+                sh "docker build --platform linux/amd64 . -t ${DOCKERHUB_USERNAME}/talkingo_frontend"
                 sh "docker login -u ${DOCKERHUB_USERNAME} -p ${DOCKERHUB_PASSWORD}" 
-                sh "docker push ${DOCKERHUB_USERNAME}/talkingo_frontend"
+                sh "docker push yanisbra/talkingo_frontend"
             }
         }
         
