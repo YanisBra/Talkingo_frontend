@@ -17,7 +17,7 @@ describe("AdminOnlyRoute", () => {
                 </AdminOnlyRoute>
               }
             />
-            <Route path="/login" element={<div>Login Page</div>} />
+            <Route path="/landing" element={<div>Landing Page</div>} />
             <Route path="/" element={<div>Home Page</div>} />
           </Routes>
         </MemoryRouter>
@@ -30,9 +30,9 @@ describe("AdminOnlyRoute", () => {
     expect(container).toBeEmptyDOMElement();
   });
 
-  it("redirects to /login if not authenticated", () => {
+  it("redirects to /landing if not authenticated", () => {
     renderWithAuth({ user: null, loading: false });
-    expect(screen.getByText("Login Page")).toBeInTheDocument();
+    expect(screen.getByText("Landing Page")).toBeInTheDocument();
   });
 
   it("redirects to / if user is not admin", () => {

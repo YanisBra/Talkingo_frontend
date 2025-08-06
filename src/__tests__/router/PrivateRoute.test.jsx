@@ -17,7 +17,7 @@ describe("PrivateRoute", () => {
                 </PrivateRoute>
               }
             />
-            <Route path="/login" element={<div>Login Page</div>} />
+            <Route path="/landing" element={<div>Landing Page</div>} />
           </Routes>
         </MemoryRouter>
       </AuthContext.Provider>
@@ -29,9 +29,9 @@ describe("PrivateRoute", () => {
     expect(container).toBeEmptyDOMElement();
   });
 
-  it("redirects to /login if user is not authenticated", () => {
+  it("redirects to /landing if user is not authenticated", () => {
     renderWithAuth({ user: null, loading: false });
-    expect(screen.getByText("Login Page")).toBeInTheDocument();
+    expect(screen.getByText("Landing Page")).toBeInTheDocument();
   });
 
   it("renders children if user is authenticated", () => {
