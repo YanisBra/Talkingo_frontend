@@ -31,6 +31,10 @@ export default function RegisterFormLogic() {
       setPasswordError("Password must be at least 12 characters.");
       return;
     }
+    if (form.interfaceLanguage === form.targetLanguage) {
+      toast.error("The learning language must be different from the app's interface language.");
+      return;
+    }
     setPasswordError("");
     setLoading(true);
     try {
